@@ -26,7 +26,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Auto-Updater
-        run: python src/main.py --file src/main.py --readme README.md
+        run: python src/main.py --file src/ --readme README.md
 
       - name: Commit and push changes
         run: |

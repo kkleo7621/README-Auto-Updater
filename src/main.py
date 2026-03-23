@@ -70,9 +70,19 @@ if __name__ == "__main__":
     parser.add_argument("--readme", default="README.md", help="要更新的 README 路徑")
     args = parser.parse_args()
 
-    if args.file and os.path.exists(args.file):
-        meta = parse_python_file(args.file)
-        doc = generate_doc_section(meta)
-        update_readme(args.readme, doc)
+    if args.file:
+        files = [args.file] if os.path.isfile(args.file) else []
+        if os.path.isdir(args.file):
+            import glob
+            files = glob.glob(os.path.join(args.file, "**/*.py"), recursive=True)
+        
+        all_meta = []
+        for f_path in files:
+            all_meta.extend(parse_python_file(f_path))
+            
+        if all_meta:
+            doc = generate_doc_section(all_meta)
+            update_readme(args.readme, doc)
+            print(f"從 {len(files)} 個檔案中提取了 {len(all_meta)} 個項目。")
     else:
-        print("請提供有效的代碼路徑。")
+        print("請提供有效的代碼路徑 (--file)。")
