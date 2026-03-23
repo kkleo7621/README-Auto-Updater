@@ -53,15 +53,15 @@ Use our [auto-doc.yml](.github/workflows/auto-doc.yml) in your repository to kee
 
 | Name / 名稱 | Type / 類型 | Signature / 簽名 | Description / 說明 |
 | --- | --- | --- | --- |
-| `DataProcessor` | **class** | - | A utility class for processing and cleaning dataset-like structures. |
-| `SecureLogger` | **class** | - | Handles encrypted logging for sensitive operations. |
-| `format_date` | **function** | `(timestamp)` | Converts a unix timestamp to a human-readable string. |
+| `DataProcessor` | **class** | - | A utility class for processing and cleaning dataset-like structures. 用於處理和清洗類數據集結構的工具類。 |
+| `SecureLogger` | **class** | - | Handles encrypted logging for sensitive operations. 處理敏感操作的加密日誌紀錄。 |
+| `format_date` | **function** | `(timestamp)` | Converts a unix timestamp to a human-readable string. 將 Unix 時間戳轉換為人類可讀的字串。 |
 | `__init__` | **function** | `(self, data_source)` | Initialize with a data source path. |
-| `clean_records` | **function** | `(self, raw_data)` | Removes duplicates and null values from raw data. |
-| `export_csv` | **function** | `(self, filename)` | Exports the processed data to a CSV file. |
-| `log_event` | **function** | `(self, level, message)` | Logs a message with a specific severity level. |
+| `clean_records` | **function** | `(self, raw_data)` | Removes duplicates and null values from raw data. 從原始數據中移除重複項和空值。 |
+| `export_csv` | **function** | `(self, filename)` | Exports the processed data to a CSV file. 將處理後的數據導出為 CSV 檔案。 |
+| `log_event` | **function** | `(self, level, message)` | Logs a message with a specific severity level. 紀錄具有特定嚴重程度的消息。 |
 | `parse_python_file` | **function** | `(file_path)` | 使用 AST 解析 Python 檔案並提取函數與類別的資訊。 |
-| `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格。 |
+| `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格 / Generate professional Markdown table. |
 | `update_readme` | **function** | `(readme_path, new_content, marker_name)` | 替換 README.md 中指定標記間的內容。 |
 
 <!-- AI-DOC-END -->

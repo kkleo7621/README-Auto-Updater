@@ -34,11 +34,13 @@ def parse_python_file(file_path: str) -> List[Dict[str, str]]:
 
 def generate_doc_section(metadata: List[Dict[str, str]]) -> str:
     """
-    生成更專業的 Markdown 表格。
+    生成更專業的 Markdown 表格 / Generate professional Markdown table.
     """
     lines = ["| Name / 名稱 | Type / 類型 | Signature / 簽名 | Description / 說明 |", "| --- | --- | --- | --- |"]
     for item in metadata:
-        doc = item['docstring'].split('\n')[0]
+        # 支援多行註解（將雙語內容合併為單行顯示）
+        doc_lines = [line.strip() for line in item['docstring'].split('\n') if line.strip()]
+        doc = " ".join(doc_lines) if doc_lines else "-"
         sig = f"`{item['signature']}`" if item['signature'] else "-"
         lines.append(f"| `{item['name']}` | **{item['type']}** | {sig} | {doc} |")
     return "\n".join(lines)
