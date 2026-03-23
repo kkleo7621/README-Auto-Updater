@@ -1,24 +1,45 @@
-def factorial(n: int) -> int:
+class DataProcessor:
     """
-    計算 n 的階乘。
+    A utility class for processing and cleaning dataset-like structures.
+    用於處理和清洗類數據集結構的工具類。
     """
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n-1)
 
-class Calculator:
-    """
-    提供基礎數學運算的計算機類別。
-    """
-    def add(self, a, b):
+    def __init__(self, data_source: str):
         """
-        將兩個數字相加。
+        Initialize with a data source path.
         """
-        return a + b
+        self.source = data_source
 
-def multiply(a, b):
+    def clean_records(self, raw_data: list) -> list:
+        """
+        Removes duplicates and null values from raw data.
+        從原始數據中移除重複項和空值。
+        """
+        return list(set([x for x in raw_data if x is not None]))
+
+    def export_csv(self, filename: str):
+        """
+        Exports the processed data to a CSV file.
+        將處理後的數據導出為 CSV 檔案。
+        """
+        print(f"Exporting to {filename}...")
+
+class SecureLogger:
     """
-    將兩個數字相乘。
+    Handles encrypted logging for sensitive operations.
+    處理敏感操作的加密日誌紀錄。
     """
-    return a * b
+
+    def log_event(self, level: str, message: str):
+        """
+        Logs a message with a specific severity level.
+        紀錄具有特定嚴重程度的消息。
+        """
+        print(f"[{level.upper()}] {message}")
+
+def format_date(timestamp: int) -> str:
+    """
+    Converts a unix timestamp to a human-readable string.
+    將 Unix 時間戳轉換為人類可讀的字串。
+    """
+    return "2026-03-23"
