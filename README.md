@@ -56,6 +56,10 @@ Use our [auto-doc.yml](.github/workflows/auto-doc.yml) in your repository to kee
 | `parse_python_file` | **function** | `(file_path)` | 使用 AST 解析 Python 檔案並提取函數與類別的資訊。 |
 | `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格。 |
 | `update_readme` | **function** | `(readme_path, new_content, marker_name)` | 替換 README.md 中指定標記間的內容。 |
+| `factorial` | **function** | `(n)` | 計算 n 的階乘。 |
+| `Calculator` | **class** | - | 提供基礎數學運算的計算機類別。 |
+| `multiply` | **function** | `(a, b)` | 將兩個數字相乘。 |
+| `add` | **function** | `(self, a, b)` | 將兩個數字相加。 |
 
 <!-- AI-DOC-END -->
 
