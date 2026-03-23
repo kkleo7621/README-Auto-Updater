@@ -14,27 +14,33 @@ def parse_python_file(file_path: str) -> List[Dict[str, str]]:
     metadata = []
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef):
+            # 獲取參數列表
+            args = [arg.arg for arg in node.args.args]
+            arg_str = f"({', '.join(args)})"
             metadata.append({
                 "type": "function",
                 "name": node.name,
+                "signature": arg_str,
                 "docstring": ast.get_docstring(node) or "No docstring provided."
             })
         elif isinstance(node, ast.ClassDef):
             metadata.append({
                 "type": "class",
                 "name": node.name,
+                "signature": "",
                 "docstring": ast.get_docstring(node) or "No docstring provided."
             })
     return metadata
 
 def generate_doc_section(metadata: List[Dict[str, str]]) -> str:
     """
-    目前暫時手動生成文檔結構，未來這裡將整合 OpenAI API。
+    生成更專業的 Markdown 表格。
     """
-    lines = ["| 名稱 | 類型 | 說明 |", "| --- | --- | --- |"]
+    lines = ["| 名稱 | 類型 | 參數 / 簽名 | 說明 |", "| --- | --- | --- | --- |"]
     for item in metadata:
-        doc = item['docstring'].split('\n')[0] # 僅取第一行作為摘要
-        lines.append(f"| `{item['name']}` | {item['type']} | {doc} |")
+        doc = item['docstring'].split('\n')[0]
+        sig = f"`{item['signature']}`" if item['signature'] else "-"
+        lines.append(f"| `{item['name']}` | **{item['type']}** | {sig} | {doc} |")
     return "\n".join(lines)
 
 def update_readme(readme_path: str, new_content: str, marker_name: str = "AI-DOC"):
