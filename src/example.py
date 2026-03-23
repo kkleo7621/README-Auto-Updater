@@ -16,3 +16,9 @@ class Calculator:
         將兩個數字相加。
         """
         return a + b
+
+def multiply(a, b):
+    """
+    將兩個數字相乘。
+    """
+    return a * b
