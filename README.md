@@ -56,10 +56,13 @@ Use our [auto-doc.yml](.github/workflows/auto-doc.yml) in your repository to kee
 | `parse_python_file` | **function** | `(file_path)` | 使用 AST 解析 Python 檔案並提取函數與類別的資訊。 |
 | `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格。 |
 | `update_readme` | **function** | `(readme_path, new_content, marker_name)` | 替換 README.md 中指定標記間的內容。 |
-| `factorial` | **function** | `(n)` | 計算 n 的階乘。 |
-| `Calculator` | **class** | - | 提供基礎數學運算的計算機類別。 |
-| `multiply` | **function** | `(a, b)` | 將兩個數字相乘。 |
-| `add` | **function** | `(self, a, b)` | 將兩個數字相加。 |
+| `DataProcessor` | **class** | - | A utility class for processing and cleaning dataset-like structures. |
+| `SecureLogger` | **class** | - | Handles encrypted logging for sensitive operations. |
+| `format_date` | **function** | `(timestamp)` | Converts a unix timestamp to a human-readable string. |
+| `__init__` | **function** | `(self, data_source)` | Initialize with a data source path. |
+| `clean_records` | **function** | `(self, raw_data)` | Removes duplicates and null values from raw data. |
+| `export_csv` | **function** | `(self, filename)` | Exports the processed data to a CSV file. |
+| `log_event` | **function** | `(self, level, message)` | Logs a message with a specific severity level. |
 
 <!-- AI-DOC-END -->
 
