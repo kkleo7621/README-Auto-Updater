@@ -51,11 +51,8 @@ Use our [auto-doc.yml](.github/workflows/auto-doc.yml) in your repository to kee
 
 <!-- AI-DOC-START -->
 
-| 名稱 | 類型 | 參數 / 簽名 | 說明 |
+| Name / 名稱 | Type / 類型 | Signature / 簽名 | Description / 說明 |
 | --- | --- | --- | --- |
-| `parse_python_file` | **function** | `(file_path)` | 使用 AST 解析 Python 檔案並提取函數與類別的資訊。 |
-| `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格。 |
-| `update_readme` | **function** | `(readme_path, new_content, marker_name)` | 替換 README.md 中指定標記間的內容。 |
 | `DataProcessor` | **class** | - | A utility class for processing and cleaning dataset-like structures. |
 | `SecureLogger` | **class** | - | Handles encrypted logging for sensitive operations. |
 | `format_date` | **function** | `(timestamp)` | Converts a unix timestamp to a human-readable string. |
@@ -63,6 +60,9 @@ Use our [auto-doc.yml](.github/workflows/auto-doc.yml) in your repository to kee
 | `clean_records` | **function** | `(self, raw_data)` | Removes duplicates and null values from raw data. |
 | `export_csv` | **function** | `(self, filename)` | Exports the processed data to a CSV file. |
 | `log_event` | **function** | `(self, level, message)` | Logs a message with a specific severity level. |
+| `parse_python_file` | **function** | `(file_path)` | 使用 AST 解析 Python 檔案並提取函數與類別的資訊。 |
+| `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格。 |
+| `update_readme` | **function** | `(readme_path, new_content, marker_name)` | 替換 README.md 中指定標記間的內容。 |
 
 <!-- AI-DOC-END -->
 

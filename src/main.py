@@ -36,7 +36,7 @@ def generate_doc_section(metadata: List[Dict[str, str]]) -> str:
     """
     生成更專業的 Markdown 表格。
     """
-    lines = ["| 名稱 | 類型 | 參數 / 簽名 | 說明 |", "| --- | --- | --- | --- |"]
+    lines = ["| Name / 名稱 | Type / 類型 | Signature / 簽名 | Description / 說明 |", "| --- | --- | --- | --- |"]
     for item in metadata:
         doc = item['docstring'].split('\n')[0]
         sig = f"`{item['signature']}`" if item['signature'] else "-"
