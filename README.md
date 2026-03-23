@@ -33,7 +33,13 @@ Place these markers in your `README.md` where you want the API docs to appear: /
 
 ```markdown
 <!-- AI-DOC-START -->
-<!-- This section will be auto-replaced by the latest API info -->
+
+| 名稱 | 類型 | 參數 / 簽名 | 說明 |
+| --- | --- | --- | --- |
+| `parse_python_file` | **function** | `(file_path)` | 使用 AST 解析 Python 檔案並提取函數與類別的資訊。 |
+| `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格。 |
+| `update_readme` | **function** | `(readme_path, new_content, marker_name)` | 替換 README.md 中指定標記間的內容。 |
+
 <!-- AI-DOC-END -->
 ```
 
@@ -51,7 +57,7 @@ Use our [auto-doc.yml](.github/workflows/auto-doc.yml) in your repository to kee
 
 <!-- AI-DOC-START -->
 
-| Name / 名稱 | Type / 類型 | Signature / 簽名 | Description / 說明 |
+| 名稱 | 類型 | 參數 / 簽名 | 說明 |
 | --- | --- | --- | --- |
 | `parse_python_file` | **function** | `(file_path)` | 使用 AST 解析 Python 檔案並提取函數與類別的資訊。 |
 | `generate_doc_section` | **function** | `(metadata)` | 生成更專業的 Markdown 表格。 |
